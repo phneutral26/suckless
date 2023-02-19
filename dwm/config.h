@@ -3,7 +3,7 @@
 #include "fibonacci.c"
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 8;
 static const unsigned int snap      = 1;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -16,7 +16,7 @@ static const char col_gray3[]       = "#9699b7";
 static const char col_gray4[]       = "#d9e0ee";
 static const char col_cyan[]        = "#393a4d";
 static const unsigned int baralpha = 0xd0;
-static const unsigned int borderalpha = OPAQUE;
+static const unsigned int borderalpha = 0.4;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
