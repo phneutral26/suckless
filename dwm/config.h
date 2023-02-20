@@ -63,14 +63,14 @@ static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *barcmd[]  = { "eww open --toggle bar", NULL };
 static const char *webcmd[]  = { "librewolf", NULL };
-static const char *filecmd[]  = { "st -e lf", NULL };
+static const char *lockcmd[]  = { "slock", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = webcmd } },
-	{ MODKEY,                       XK_x,      spawn,          {.v = filecmd } },
+	{ MODKEY,                       XK_x,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("eww open --toggle bar") },
 	{ MODKEY,                       XK_n,      spawn,          SHCMD("cd ~/stuff/notes && st -c st-notes -e nvim ~/stuff/notes/$(date '+%Y-%m-%d').md") },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
