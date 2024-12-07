@@ -8,8 +8,8 @@ static const unsigned int gappx     = 5;
 static const unsigned int snap      = 1;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "terminus:size=12" };
-static const char dmenufont[]       = "terminus:size=12";
+static const char *fonts[]          = { "JetBrainsMono NFM" };
+static const char dmenufont[]       = "JetBrainsMono NFM";
 static const char col_gray1[]       = "#292a37";
 static const char col_gray2[]       = "#292a37";
 static const char col_gray3[]       = "#9699b7";
@@ -30,7 +30,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "term", "web", "file", "watch", "misc" };
+static const char *tags[] = { "term", "web", "code", "watch", "doc", "dwl", "music" };
 
 static const Rule rules[] = {
     { "LibreWolf", NULL, NULL, 2, 0, -1 },
@@ -61,8 +61,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *barcmd[]  = { "eww open --toggle bar", NULL };
-static const char *webcmd[]  = { "librewolf", NULL };
+static const char *webcmd[]  = { "firefox", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 
 static Key keys[] = {
@@ -72,7 +71,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          {.v = webcmd } },
 	{ MODKEY,                       XK_x,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_b,      spawn,          SHCMD("eww open --toggle bar") },
-	{ MODKEY,                       XK_n,      spawn,          SHCMD("st -c newsboat") },
+	{ MODKEY,                       XK_n,      spawn,          SHCMD("st -e nvim") },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -93,7 +92,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS( XK_1, 0) TAGKEYS( XK_2, 1) TAGKEYS( XK_3, 2) TAGKEYS( XK_4, 3) TAGKEYS( XK_5, 4)
+	TAGKEYS( XK_1, 0) TAGKEYS( XK_2, 1) TAGKEYS( XK_3, 2) TAGKEYS( XK_4, 3) TAGKEYS( XK_5, 4) TAGKEYS( XK_6, 5) TAGKEYS( XK_7, 6)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
